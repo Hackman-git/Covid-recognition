@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>COVID RECOGNIZER</title>
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    </head>
+    <body>
+
+    <div class="main">
+            <div>
+            <h1>COVID RECOGNIZER</h1>
+            <br>
+            </div>
+            <div class="container">
+            <br>
+            <h1>Upload Images</h1>
+            <form action="{{url_for('predict')}}" method="POST">
+                Chest X_ray image can be in .jpg or.png format only :<br>
+                <input type="file" id="img" name="img" accept="image/*">
+                <br>
+                <button type="submit" class="submitBtn">PREDICT</button>
+                <br>
+            </form>
+            <h2>{{ prediction_text }}</h2>
+            <br>
+            </div>
+            <div>
+            <br>
+            <a href="static/Report.pdf" download="KINJALKACHI" >
+                <button class="submitBtn">Download File</button>
+            </a>
+            <button type="submit" onclick="window.open('static/Report.pdf')" class="submitBtn">PREVIEW</button>
+            </div>
+    </div>   
+    </body>
+</html>
