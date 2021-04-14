@@ -1,0 +1,193 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>COVID Recognition</title>
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+    </head>
+    <body>
+        <div class="main">
+            <div class="fixed bg1" id="1">
+                <br>
+                <br>
+                <br>
+                <img src="static/new6.PNG" alt="Smiley face" width="300" height="150" style="float: left;">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <h1>ARTIFICIAL INTELLIGENCE FOR COVID-19</h1>
+                <br>
+                <br>
+                <br>
+                <br>
+                <a href="#2"><button class = "submitBtn" >ABOUT</button>></a>
+                <br>
+                <br>
+                <a href="#3"><button class = "submitBtn" >COVID-19 Recognizer</button>></a>
+            </div>
+            <div class="fixed bg2" id="2">
+                <br>
+                <br> 
+                <br>
+                <br>  
+                <h1>ABOUT</h1>
+                <br>
+                <br> 
+                <br>
+                <br>  
+                <style>
+                p {
+                    font-size: 20px;
+                }
+                </style>
+                <p>CORNEA is a web application designed by three Masters of Data Science
+                    students of Illinois Institute of Technology.COVID-19 Recognizer tool in this application 
+                    will help the Radialogist if the patient is COVID-19 virus positive, is he/she infected 
+                    with Viral Pneumonia, or has normal reports.</p>
+                <br> 
+                <br>
+                <br>  
+                <a href="#3"><button class = "submitBtn" >COVID-19 Recognizer</button>></a>
+                <br>
+            </div>
+            <div class="fixed bg3" id="3">
+                <div>
+                    <br>   
+                    <a href="#1"><button class = "submitBtn" style="float: right;">HOME</button>></a> 
+                    <br>
+                    <br> 
+                    <br>
+                    <br>                
+                    <h1>COVID RECOGNIZER</h1>
+                    <br>                     
+                    </div>
+                    <div class="container">
+                    <br>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                    <h1>Upload Images</h1>
+                    <form id="form" action="{{url_for('predict')}}" method="POST" enctype="multipart/form-data">
+                        Chest X_ray image can be in .jpg or.png format only :
+                        <br>
+                        <p><input type="file" name="file"  multiple/>
+                        <input type='submit' value='upload'>
+                        <!--p>Directory & accept: <input id="Directory" name="Directory" type="file" webkitdirectory mozdirectory accept="image/*" /></p-->
+                        <!--input type='submit' value='upload'-->
+                        <br>
+                        <style>
+                            /* Popup container - can be anything you want */
+                            .popup {
+                              position: relative;
+                              display: inline-block;
+                              cursor: pointer;
+                              -webkit-user-select: none;
+                              -moz-user-select: none;
+                              -ms-user-select: none;
+                              user-select: none;
+                              margin-top: 10px;
+                              margin-top: 10px;
+                              margin-bottom: 10px;
+                              width: auto;
+                              background: #4966b1;
+                              color: rgb(255, 255, 255);
+                              padding: 16px 17px;
+                              font-size: 13px;
+                              border: none;
+                              border-radius: 5px;
+                              -moz-border-radius: 5px;
+                              -webkit-border-radius: 5px;
+                              -o-border-radius: 5px;
+                              -ms-border-radius: 5px;
+                              cursor: pointer;
+                              letter-spacing: 2px;
+                              box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+                              -moz-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+                              -webkit-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+                              -o-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+                              -ms-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
+                            }
+                            
+                            /* The actual popup */
+                            .popup .popuptext {
+                              visibility: hidden;
+                              width: 250px;
+                              background-color: #555;
+                              color: #fff;
+                              text-align: center;
+                              border-radius: 6px;
+                              padding: 8px 0;
+                              position: absolute;
+                              z-index: 1;
+                              bottom: 125%;
+                              left: 50%;
+                              margin-left: -80px;
+                            }
+                            
+                            /* Popup arrow */
+                            .popup .popuptext::after {
+                              content: "";
+                              position: absolute;
+                              top: 100%;
+                              left: 50%;
+                              margin-left: -5px;
+                              border-width: 5px;
+                              border-style: solid;
+                              border-color: #555 transparent transparent transparent;
+                            }
+                            
+                            /* Toggle this class - hide and show the popup */
+                            .popup .show {
+                              visibility: visible;
+                              -webkit-animation: fadeIn 1s;
+                              animation: fadeIn 1s;
+                            }
+                            
+                            /* Add animation (fade in the popup) */
+                            @-webkit-keyframes fadeIn {
+                              from {opacity: 0;} 
+                              to {opacity: 1;}
+                            }
+                            
+                            @keyframes fadeIn {
+                              from {opacity: 0;}
+                              to {opacity:1 ;}
+                            }
+                            </style>
+                            </head>
+                            <body style="text-align:center">        
+                            <div class="popup" onclick="myFunction()"> PREDICT
+                              <span class="popuptext" id="myPopup">The Patient is COVID-19 positive</span>
+                            </div>
+                            
+                            <script>
+                            // When the user clicks on div, open the popup
+                            function myFunction() {
+                              var popup = document.getElementById("myPopup");
+                              popup.classList.toggle("show");
+                            }
+                            </script>
+                        <br>
+                    </form>
+                    <h2>{{prediction_text}}</h2>
+                    <br>
+                    </div>
+                    <div>
+                    <br>
+                    <a href="static/Report.pdf" download="KINJALKACHI" >
+                        <button class="submitBtn">Download File</button>
+                    </a>
+                    <button type="submit" onclick="window.open('static/Report.pdf')" class="submitBtn">PREVIEW</button>
+                    </div>
+            </div>
+        </div>
+    </body>
+</html>
