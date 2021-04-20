@@ -63,7 +63,7 @@ def return_files_tut():
     try:
 
         # The absolute path of the directory containing CSV files for users to download
-        path = "C:/Users/kinja/OneDrive/Desktop/All/4.SEM4/DSP/UI/test/static/"
+        path = "static/"
         report_name = "Report{}.csv".format(batchid)
         return send_from_directory(path, report_name, attachment_filename= "Report.csv", as_attachment=True)
     except Exception as e:

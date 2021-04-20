@@ -6,6 +6,7 @@
         <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Josefin+Sans" />
         <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
     </head>
     <body>
@@ -14,7 +15,7 @@
                 <br>
                 <br>
                 <br>
-                <img src="static/new6.PNG" alt="Smiley face" width="300" height="150" style="float: left;">
+                <img src="static/new_logo2.PNG" alt="Smiley face" width="250" height="110" style="float: left;">
                 <br>
                 <br>
                 <br>
@@ -33,7 +34,7 @@
                 <a href="#2"><button class = "submitBtn" >ABOUT</button>></a>
                 <br>
                 <br>
-                <a href="#3"><button class = "submitBtn" >COVID-19 Recognizer</button>></a>
+                <a href="#3"><button class = "submitBtn" >COVID-19 RECOGNIZER</button>></a>
             </div>
             <div class="fixed bg2" id="2">
                 <br>
@@ -47,17 +48,17 @@
                 <br>  
                 <style>
                 p {
-                    font-size: 20px;
+                    font-size: 25px;
                 }
                 </style>
-                <p>CORNEA is a web application designed by three Masters of Data Science
+                <p style="margin-left: 80px; margin-right: 80px; text-shadow: 1.5px 1.5px #4966b1;">CORNEA is a web application designed by three Masters of Data Science
                     students of Illinois Institute of Technology.COVID-19 Recognizer tool in this application 
                     will help the Radialogist if the patient is COVID-19 virus positive, is he/she infected 
                     with Viral Pneumonia, or has normal reports.</p>
                 <br> 
                 <br>
                 <br>  
-                <a href="#3"><button class = "submitBtn" >COVID-19 Recognizer</button>></a>
+                <a href="#3"><button class = "submitBtn" >COVID-19 RECOGNIZER</button>></a>
                 <br>
             </div>
             <div class="fixed bg3" id="3">
@@ -76,22 +77,22 @@
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
                     <h1>Upload Images</h1>
                     <form id="form" action="{{url_for('predict')}}" method="POST" enctype="multipart/form-data">
-                        Chest X_ray image can be in .jpg or.png format only :
+                        <p style="font-size: 13px; text-shadow: 1px 1px #4966b1;">Chest X_ray image can be in .jpg or.png format only :</p>
                         <br>
-                        <p><input type="file" name="file"  multiple/>
-                        <input type='submit' value='upload' class="submitBtn">
+                        <p><input type="file" name="file"  multiple accept="image/x-png, image/jpeg"/>
+                        <input type='submit' value='UPLOAD' class="submitBtn">
                     </form>
                     <h2>{{prediction_text}}</h2>
                     <br>
                     <form id="form2" action="{{url_for('results')}}" method = "post">
-                        <input type="submit" value = 'Predict' class="submitBtn">
+                        <input type="submit" value = 'PREDICT' class="submitBtn">
                     </form>
                     <h2>{{result_text}}</h2>
                     <br>
                     </div>
                     <div>
                     <br>
-                    <a href="/return_files/" target="blank"><button class='submitBtn'>Download!</button></a>
+                    <a href="/return_files/" target="blank"><button class='submitBtn'>DOWNLOAD</button></a>
                     <!--button type="submit" onclick="window.open('static/Report.csv')" class="submitBtn">DOWNLOAD</button-->
                     </div>
             </div>
